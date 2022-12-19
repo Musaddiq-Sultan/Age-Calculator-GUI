@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=python3 /usr/bin/age_calc_gui.py
+Name=Age Calculator
+Icon=/usr/share/icons/age_calculator_gui/age_calculator.svg
+Name[en_US]=Age Calculator
+GenericName[en_US]=Age calculator launcher

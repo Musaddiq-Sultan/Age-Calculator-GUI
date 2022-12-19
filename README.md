@@ -20,7 +20,7 @@ Lite and basic GUI age calculator programmed in Python3 via Tkinter module.
 
 <h1>Installation</h1>
 <p>
-• <code>git clone https://github.com/Musaddiq-Sultan/Age-Calculator-GUI</code><br>
-• <code>cd Age-Calculator-GUI/</code><br>
-• <code>bash setup</code>
+• <code>git clone https://github.com/Musaddiq-Sultan/Age-Calculator-GUI</code><br>(<i>Clone into Age-Calculator-GUI</i>)<br>
+• <code>cd Age-Calculator-GUI/</code><br>(<i>Change directory to Age-Calculator-GUI</i>)<br>
+• <code>bash setup</code><br>(<i>Run the setup</i>)
 </p>

@@ -2,7 +2,7 @@
 Lite and basic GUI age calculator programmed in Python3 via Tkinter module.
 
 <h1>Preview</h1>
-<img src="https://i.postimg.cc/jdHBZ37S/agecalc.gif" alt="Age Calculator Preview">
+<img src="https://i.postimg.cc/fyQ3Mm9z/age-calc.giff" alt="Age Calculator Preview">
 
 <h1>Note</h1>
 <p>

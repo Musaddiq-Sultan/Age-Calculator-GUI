@@ -172,7 +172,7 @@ def temp_text(e):
     global day_clicks
     if day_clicks == 0:
         entry_01.delete(0,"end")
-    day_clicks += 1
+    day_clicks = 1
 
 entry_01 = tk.Entry(
     frame_01,
@@ -188,7 +188,7 @@ def temp_text(e):
     global month_clicks
     if month_clicks == 0:
         entry_02.delete(0,"end")
-    month_clicks += 1
+    month_clicks = 1
 entry_02 = tk.Entry(
     frame_01,
     bg = "#444",
@@ -202,7 +202,7 @@ def temp_text(e):
     global year_clicks
     if year_clicks == 0:
         entry_03.delete(0,"end")
-    year_clicks += 1
+    year_clicks = 1
 entry_03 = tk.Entry(
     frame_01,
     bg = "#444",

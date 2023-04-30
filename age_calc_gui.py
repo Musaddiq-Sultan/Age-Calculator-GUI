@@ -11,7 +11,7 @@ root = tk.Tk()
 root.title("Age Calculator")
 root.geometry("571x590")
 root.resizable(0,0)
-icon = PhotoImage(file = "/usr/share/icons/custom/age_calculator.png")
+icon = PhotoImage(file = "/usr/share/icons/age_calculator_gui/age_calculator.png")
 root.iconphoto(False, icon)
 root.config(bg = "#333")
 

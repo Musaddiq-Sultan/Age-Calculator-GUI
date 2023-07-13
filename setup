@@ -1,37 +1,54 @@
 #!/usr/bin/bash
+
 echo -e "1. Install\n2. Uninstall"
 read -p "Input: " input
 
-if [[ input -eq 1 ]]
-then
+if [[ $input -eq 1 ]]; then
+    echo "Installing..."
+    echo "Installing Dependencies..."
+    sudo apt-get install python3 python3-pip python3-tk -y
+    pip3 install datetime
+    echo "Making Directories..."
+    if [ ! -d "$HOME/.local/bin" ]; then
+        mkdir -p "$HOME/.local/bin"
+    fi
 
-echo "Installing..."
-echo "Installing Dependencies..."
-sudo apt-get install python3 python3-pip python3-tk -y
-pip3 install datetime
-echo "Making Directory..."
-sudo mkdir /usr/share/icons/age_calculator_gui
-echo "Copying Files..."
-sudo cp age_calc_gui.py /usr/bin/
-sudo cp age_calculator.svg age_calculator.png /usr/share/icons/age_calculator_gui/
-sudo cp "Age Calculator.desktop" /usr/share/applications/
-echo "Adding Permissions..."
-sudo chmod +755 /usr/bin/age_calc_gui.py
-read -p "Press Enter to finish"
+    if [ ! -d "$HOME/.local/share/icons/age_calculator_gui" ]; then
+        mkdir -p "$HOME/.local/share/icons/age_calculator_gui"
+    fi
 
-elif [[ input -eq 2 ]]
-then
+    if [ ! -d "$HOME/.local/share/applications" ]; then
+        mkdir -p "$HOME/.local/share/applications"
+    fi
 
-echo "Uninstalling..."
-echo "Removing Files..."
-sudo rm /usr/bin/age_calc_gui.py
-sudo rm -rf /usr/share/icons/age_calculator_gui
-sudo rm /usr/share/applications/Age\ Calculator.desktop
-read -p "Press Enter to finish"
+    echo "Copying Files..."
+    cp age_calc_gui.py "$HOME/.local/bin/"
+    cp age_calculator.svg age_calculator.png "$HOME/.local/share/icons/age_calculator_gui/"
+    echo "Copying .desktop file..."
+    desktop_file_content="[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/$USER/.local/bin/age_calc_gui.py
+Name=Age Calculator
+Icon=/home/$USER/.local/share/icons/age_calculator_gui/age_calculator.svg
+Name[en_US]=Age Calculator
+GenericName[en_US]=Age calculator launcher"
+    echo "$desktop_file_content" > "$HOME/.local/share/applications/age_calculator.desktop"
 
+    echo "Adding Permissions..."
+    chmod +755 "$HOME/.local/bin/age_calc_gui.py"
+    chmod +644 "$HOME/.local/share/applications/age_calculator.desktop"
+    read -p "Press Enter to finish"
+elif [[ $input -eq 2 ]]; then
+    echo "Uninstalling..."
+    echo "Removing Files..."
+    rm "$HOME/.local/bin/age_calc_gui.py"
+    rm -rf "$HOME/.local/share/icons/age_calculator_gui"
+    rm "$HOME/.local/share/applications/age_calculator.desktop"
+    read -p "Press Enter to finish"
 else
-
-echo "Wrong Input"
-read -p "Press Enter to exit"
-
+    echo "Wrong Input"
+    read -p "Press Enter to exit"
 fi

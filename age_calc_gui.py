@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 #===============MODULES===============#
 
 import tkinter as tk
@@ -10,8 +9,8 @@ import datetime
 root = tk.Tk()
 root.title("Age Calculator")
 root.geometry("571x590")
-root.resizable(0,0)
-icon = PhotoImage(file = "/usr/share/icons/age_calculator_gui/age_calculator.png")
+root.minsize(450, 590)
+icon = PhotoImage(file = "./age_calculator.png")
 root.iconphoto(False, icon)
 root.config(bg = "#333")
 
@@ -127,6 +126,8 @@ frame_01 = tk.LabelFrame(
     bg = "#333",
     fg = "#fff")
 
+dateFrame = tk.Frame(frame_01, bg = "#333")
+
 #===============FRAME 02===============#
 
 frame_02 = tk.LabelFrame(
@@ -135,6 +136,8 @@ frame_02 = tk.LabelFrame(
     borderwidth = 2,
     bg = "#333",
     fg = "#fff")
+
+ageFrame = tk.Frame(frame_02, bg = "#333")
 
 #===============FRAME 03===============#
 
@@ -175,7 +178,7 @@ def temp_text(e):
     day_clicks = 1
 
 entry_01 = tk.Entry(
-    frame_01,
+    dateFrame,
     bg = "#444",
     fg = "#fff")
 
@@ -190,7 +193,7 @@ def temp_text(e):
         entry_02.delete(0,"end")
     month_clicks = 1
 entry_02 = tk.Entry(
-    frame_01,
+    dateFrame,
     bg = "#444",
     fg = "#fff")
 entry_02.insert(0, "Month")
@@ -204,7 +207,7 @@ def temp_text(e):
         entry_03.delete(0,"end")
     year_clicks = 1
 entry_03 = tk.Entry(
-    frame_01,
+    dateFrame,
     bg = "#444",
     fg = "#fff")
 entry_03.insert(0, "Year")
@@ -213,7 +216,7 @@ entry_03.bind("<FocusIn>", temp_text)
 #===============ENTRY 04===============#
 
 entry_04 = tk.Entry(
-    frame_02,
+    ageFrame,
     bg = "#444",
     fg = "#fff")
 entry_04.insert(0, d0)
@@ -221,7 +224,7 @@ entry_04.insert(0, d0)
 #===============ENTRY 05===============#
 
 entry_05 = tk.Entry(
-    frame_02,
+    ageFrame,
     bg = "#444",
     fg = "#fff")
 entry_05.insert(0, m0)
@@ -229,7 +232,7 @@ entry_05.insert(0, m0)
 #===============ENTRY 06===============#
 
 entry_06 = tk.Entry(
-    frame_02,
+    ageFrame,
     bg = "#444",
     fg = "#fff")
 entry_06.insert(0, y0)
@@ -272,12 +275,17 @@ button_02 = tk.Button(
 
 #===============FRAMES===============#
 
+ageFrame.pack()
+dateFrame.pack()
+
 frame_02.pack(
     padx = 5,
-    pady = 0)
+    pady = 0,
+    fill="both")
 frame_01.pack(
     padx = 5,
-    pady = 0)
+    pady = 0,
+    fill="both")
 frame_04.pack(
     pady = (5,0),
     padx = 5,
@@ -288,56 +296,23 @@ frame_05.pack(
     padx = 5,
     fill = "both",
     expand = True)
-frame_03.pack(
-    fill = "x",
-    padx = 5,
-    pady = (5, 10))
+frame_03.pack(pady=5)
 frame_04.propagate(0)
 frame_05.propagate(0)
 
 #===============ENTRIES===============#
 
-entry_01.grid(
-    row = 0,
-    column = 0,
-    padx = 5,
-    pady = 3)
-entry_02.grid(
-    row = 0,
-    column = 1,
-    padx = 5,
-    pady = 3)
-entry_03.grid(
-    row = 0,
-    column = 2,
-    padx = 5,
-    pady = 3)
-entry_04.grid(
-    row = 0,
-    column = 0,
-    padx = 5,
-    pady = 3)
-entry_05.grid(
-    row = 0,
-    column = 1,
-    padx = 5,
-    pady = 3)
-entry_06.grid(
-    row = 0,
-    column = 2,
-    padx = 5,
-    pady = 3)
+entry_01.pack(side="left", padx=(10, 0), pady=10, fill="x")
+entry_02.pack(side="left", padx=(10, 0), pady=10, fill="x")
+entry_03.pack(side="left", padx=(10, 0), pady=10, fill="x")
+entry_04.pack(side="left", padx=(10, 0), pady=10, fill="x")
+entry_05.pack(side="left", padx=(10, 0), pady=10, fill="x")
+entry_06.pack(side="left", padx=(10, 0), pady=10, fill="x")
 
 #===============BUTTONS===============#
 
-button_01.grid(
-    row = 0,
-    column = 0,
-    padx = (140,0))
-button_02.grid(
-    row = 0,
-    column = 1,
-    padx = (90, 0))
+button_01.pack(side="left", padx=(5, 0))
+button_02.pack(side="left", padx=(5, 0))
 
 #===============MAINLOOP===============#
 

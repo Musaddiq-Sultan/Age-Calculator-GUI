@@ -1,8 +1,10 @@
+#!/usr/bin/python3
+
 #===============MODULES===============#
 
 import tkinter as tk
 from tkinter import PhotoImage, messagebox
-import datetime
+import datetime, os
 
 #===============ROOT WINDOW===============#
 
@@ -10,7 +12,8 @@ root = tk.Tk()
 root.title("Age Calculator")
 root.geometry("571x590")
 root.minsize(450, 590)
-icon = PhotoImage(file = "./age_calculator.png")
+icon_path = os.path.expanduser('~/.local/share/icons/age_calculator_gui/age_calculator.png')
+icon = PhotoImage(file = icon_path)
 root.iconphoto(False, icon)
 root.config(bg = "#333")
 

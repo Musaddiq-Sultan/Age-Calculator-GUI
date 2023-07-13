@@ -2,8 +2,7 @@
 Lite and basic GUI age calculator programmed in Python3 via Tkinter module.
 
 <h1>Preview</h1>
-<img src="https://i.postimg.cc/fyQ3Mm9z/age-calc.giff" alt="Age Calculator Preview">
-
+<img src="https://github.com/Musaddiq-Sultan/Age-Calculator-GUI/blob/0f03623062615c493fa64e6ff35ad722c82ffb2e/preview.GIF" alt="Age Calculator Preview">
 <h1>Note</h1>
 <p>
 • Tested on Linux Mint 21 (Debian)<br>
